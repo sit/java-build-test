@@ -1,0 +1,23 @@
+This is a simple project to test whether or not
+various Java build tools can successfully do an
+incremental build and detect breakages.
+
+It runs two tests.  For each test, we start
+with a clean build, then make a simple change and
+see if the build output is correct.
+
+1. Rename B.java to C.java and test whether B.class
+   appears in the .jar file.  It should not.
+
+2. Delete A.java which should break the build (because
+   TestA.java instantiates an A).
+
+From any Unix machine with Java, Maven, Gradle
+and Buildr installed, just type "./runme.sh" to
+run the tests.
+
+Log files for each action in detail will appear
+in the working directory.
+
+As of Maven 3.0, Gradle 0.9.3, and Buildr 1.4.4, only
+Gradle behaves correctly.
